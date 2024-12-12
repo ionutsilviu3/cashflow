@@ -5,14 +5,20 @@
              https://jakarta.ee/xml/ns/persistence/persistence_3_2.xsd"
              version="3.2">
     <persistence-unit name="default" transaction-type="JTA">
+        <!-- Specify the JNDI Data Source -->
         <jta-data-source>jdbc/cashFlowResource</jta-data-source>
-        <class>com.boancionut.cashflow.ejb.model.User</class>
+
+        <!-- Include all classes in the classpath -->
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+
         <properties>
-            <property name="hibernate.hbm2ddl.auto" value="update"/>
-            <property name="eclipseLink.logging.level" value="FINE"/>
+            <!-- Schema Management -->
+            <property name="jakarta.persistence.schema-generation.database.action" value="create" />
+            <property name="jakarta.persistence.jdbc.time_zone" value="UTC" />
+
+            <!-- Logging and Debugging -->
+            <property name="eclipselink.logging.level" value="FINE" />
+            <property name="eclipselink.logging.parameters" value="true" />
         </properties>
     </persistence-unit>
 </persistence>
-
-
-

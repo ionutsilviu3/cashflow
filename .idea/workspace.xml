@@ -10,25 +10,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a44aad11-9eaa-44e1-82a7-c6612b69d549" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/FirstStatelessEjb.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejbClient/FirstStatelessEjbRemote.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/standaloneClient/UserBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/beans.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/users.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/BaseStatelessEjb.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/CategoryStatelessEjb.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/model/Budget.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/model/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/model/Notification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/model/Transaction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejbClient/BaseStatelessEjbRemote.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejbClient/CategoryStatelessEjbRemote.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/faces-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/UserStatelessEjb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/UserStatelessEjb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejbClient/UserStatelessEjbRemote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejbClient/UserStatelessEjbRemote.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/standaloneClient/UserBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/standaloneClient/UserBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/users.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/users.xhtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,12 +38,26 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="jsf" />
+        <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;ionutsilviu3&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/ionutsilviu3/cashflow&quot;,
+    &quot;accountId&quot;: &quot;2b9e261a-6582-4c6e-8a9c-3c51e3cd4b8a&quot;
+  }
+}</component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -70,27 +83,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Payara Server.Payara 6.20.0.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/ionut/IdeaProjects/CashFlow/src/main/java/com/boancionut/cashflow",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Payara Server.Payara 6.20.0.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ionut/IdeaProjects/CashFlow/src/main/java/com/boancionut/cashflow&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ionut\IdeaProjects\CashFlow\src\main\java\com\boancionut\cashflow" />
@@ -186,10 +204,25 @@
       <option name="presentableId" value="Default" />
       <updated>1733409377717</updated>
       <workItem from="1733409378810" duration="3268000" />
+      <workItem from="1733764156056" duration="1384000" />
+      <workItem from="1733951398393" duration="4121000" />
+      <workItem from="1733955630664" duration="2205000" />
+      <workItem from="1733992418078" duration="9625000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

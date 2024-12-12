@@ -20,16 +20,16 @@ public class UserBean implements Serializable {
     private List<User> userList;
 
     @EJB
-    private UserStatelessEjbRemote firstStatelessEjb;
+    private UserStatelessEjbRemote userStatelessEjbRemote;
 
     @PostConstruct
     public void init() {
-        userList = firstStatelessEjb.getAllUsers();
+        userList = userStatelessEjbRemote.getAll();
     }
 
     public void addUser() {
-        firstStatelessEjb.insert(name, email, password);
-        userList = firstStatelessEjb.getAllUsers();
+        userStatelessEjbRemote.insert(new User(name, email, password));
+        userList = userStatelessEjbRemote.getAll();
     }
 
     public String getName() {
