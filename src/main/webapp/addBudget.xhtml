@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:view>
+    <h:form>
+        <h:panelGrid columns="2">
+            <h:outputLabel for="name" value="Budget Name:" />
+            <h:inputText id="name" value="#{budgetBean.name}" required="true" />
+
+            <h:outputLabel for="amount" value="Budget Amount:" />
+            <h:inputText id="amount" value="#{budgetBean.amount}" required="true" />
+
+            <h:outputLabel value="Categories:" />
+            <h:panelGroup>
+                <ui:repeat value="#{budgetBean.categories}" var="category">
+                    <h:selectBooleanCheckbox value="#{budgetBean.selectedCategories.contains(category)}">
+                        <f:ajax event="change" render="@this" />
+                    </h:selectBooleanCheckbox>
+                    <h:outputLabel value="#{category.name}" />
+                    <br />
+                </ui:repeat>
+            </h:panelGroup>
+        </h:panelGrid>
+        <h:commandButton value="Add Budget" action="#{budgetBean.addBudget}" />
+        <h:commandButton value="Cancel" action="index?faces-redirect=true" />
+    </h:form>
+</f:view>
+</html>

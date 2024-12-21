@@ -59,4 +59,8 @@ public class UserBean implements Serializable {
     public List<User> getUserList() {
         return userList;
     }
+
+    public User getFirstUser() {
+        return userList.get(0);
+    }
 }

@@ -9,25 +9,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a44aad11-9eaa-44e1-82a7-c6612b69d549" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/BaseStatelessEjb.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/CategoryStatelessEjb.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/model/Budget.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/model/Category.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/model/Notification.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/model/Transaction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejbClient/BaseStatelessEjbRemote.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejbClient/CategoryStatelessEjbRemote.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/faces-config.xml" afterDir="false" />
+    <list default="true" id="a44aad11-9eaa-44e1-82a7-c6612b69d549" name="Changes" comment="chore: refactored for better structure">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/BudgetStatelessEjb.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejbClient/BudgetStatelessEjbRemote.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/standaloneClient/BudgetBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/addBudget.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/UserStatelessEjb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/UserStatelessEjb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/CategoryStatelessEjb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/CategoryStatelessEjb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/model/Budget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/model/Budget.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/model/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/model/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/model/Notification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/model/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/model/Transaction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejbClient/UserStatelessEjbRemote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejbClient/UserStatelessEjbRemote.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/standaloneClient/UserBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/standaloneClient/UserBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/faces-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/faces-config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/users.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/users.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/users.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.xhtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,9 +35,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="jsf" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
+        <option value="jsf" />
       </list>
     </option>
   </component>
@@ -116,7 +114,6 @@
   </component>
   <component name="RunManager">
     <configuration name="Payara 6.20.0" type="PayaraServerConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="Payara 6.20.0" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/CashFlow-1.0-SNAPSHOT/users.xhtml" />
       <deployment>
         <artifact name="CashFlow:war exploded">
           <settings />
@@ -207,8 +204,18 @@
       <workItem from="1733764156056" duration="1384000" />
       <workItem from="1733951398393" duration="4121000" />
       <workItem from="1733955630664" duration="2205000" />
-      <workItem from="1733992418078" duration="9625000" />
+      <workItem from="1733992418078" duration="20776000" />
+      <workItem from="1734020483334" duration="6600000" />
     </task>
+    <task id="LOCAL-00001" summary="chore: refactored for better structure">
+      <option name="closed" value="true" />
+      <created>1734007770329</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1734007770329</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -219,10 +226,26 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="chore: refactored for better structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: refactored for better structure" />
   </component>
 </project>

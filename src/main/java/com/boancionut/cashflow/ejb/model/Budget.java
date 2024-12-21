@@ -1,9 +1,8 @@
 package com.boancionut.cashflow.ejb.model;
-import jakarta.persistence.*;
 
+import jakarta.persistence.*;
 import java.io.Serializable;
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "budgets")
@@ -11,40 +10,58 @@ public class Budget implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private long id;
+
+    @Column(nullable = false)
+    private double amount;
+
+    @Column(nullable = false)
+    private String name;
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    @ManyToOne
-    @JoinColumn(name = "category_id", nullable = false)
-    private Category category;
-
-    @Column(nullable = false)
-    private BigDecimal monthlyLimit;
-
-//    @Column(nullable = false)
-//    private LocalDateTime createdAt;
-//
-//    @Column(nullable = false)
-//    private LocalDateTime updatedAt;
+    @ManyToMany
+    @JoinTable(
+            name = "budget_categories",
+            joinColumns = @JoinColumn(name = "budget_id"),
+            inverseJoinColumns = @JoinColumn(name = "category_id")
+    )
+    private List<Category> categories;
 
     public Budget() {
     }
 
-    public Budget(User user, Category category, BigDecimal monthlyLimit) {
+    public Budget(String name, double amount, User user, List<Category> categories) {
+        this.name = name;
+        this.amount = amount;
         this.user = user;
-        this.category = category;
-        this.monthlyLimit = monthlyLimit;
+        this.categories = categories;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(double amount) {
+        this.amount = amount;
     }
 
     public User getUser() {
@@ -55,35 +72,11 @@ public class Budget implements Serializable {
         this.user = user;
     }
 
-    public Category getCategory() {
-        return category;
+    public List<Category> getCategories() {
+        return categories;
     }
 
-    public void setCategory(Category category) {
-        this.category = category;
+    public void setCategories(List<Category> categories) {
+        this.categories = categories;
     }
-
-    public BigDecimal getMonthlyLimit() {
-        return monthlyLimit;
-    }
-
-    public void setMonthlyLimit(BigDecimal monthlyLimit) {
-        this.monthlyLimit = monthlyLimit;
-    }
-
-//    public LocalDateTime getCreatedAt() {
-//        return createdAt;
-//    }
-//
-//    public void setCreatedAt(LocalDateTime createdAt) {
-//        this.createdAt = createdAt;
-//    }
-//
-//    public LocalDateTime getUpdatedAt() {
-//        return updatedAt;
-//    }
-//
-//    public void setUpdatedAt(LocalDateTime updatedAt) {
-//        this.updatedAt = updatedAt;
-//    }
 }
