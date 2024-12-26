@@ -18,10 +18,9 @@ import java.util.List;
 public class BudgetBean implements Serializable {
 
     private String name;
-    private double amount;
+    private double totalAmount;
     private List<Budget> budgets;
     private User user;
-    private List<Category> categoryList;
 
     @EJB
     private BudgetStatelessEjbRemote budgetStatelessEjbRemote;
@@ -33,13 +32,12 @@ public class BudgetBean implements Serializable {
 
     public String addBudget() {
         user = budgetStatelessEjbRemote.getUserById(1L);
-        categoryList = budgetStatelessEjbRemote.getCategories();
-        budgetStatelessEjbRemote.insert(new Budget(name, amount, user, categoryList));
+        budgetStatelessEjbRemote.insert(new Budget(name, totalAmount, user));
         return "index?faces-redirect=true";
     }
 
-    public String deleteBudget(int budgetId) {
-        budgetStatelessEjbRemote.delete((long) budgetId);
+    public String deleteBudget(Long budgetId) {
+        budgetStatelessEjbRemote.delete(budgetId);
         budgets = budgetStatelessEjbRemote.getAll();
         return "index?faces-redirect=true";
     }
@@ -60,12 +58,12 @@ public class BudgetBean implements Serializable {
         this.name = name;
     }
 
-    public double getAmount() {
-        return amount;
+    public double getTotalAmount() {
+        return totalAmount;
     }
 
-    public void setAmount(double amount) {
-        this.amount = amount;
+    public void setTotalAmount(double totalAmount) {
+        this.totalAmount = totalAmount;
     }
 
     public User getUser() {
@@ -74,14 +72,6 @@ public class BudgetBean implements Serializable {
 
     public void setUser(User user) {
         this.user = user;
-    }
-
-    public List<Category> getCategoryList() {
-        return categoryList;
-    }
-
-    public void setCategoryList(List<Category> categoryList) {
-        this.categoryList = categoryList;
     }
 
     public String navigateToAddBudget() {

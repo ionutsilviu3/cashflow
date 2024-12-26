@@ -10,5 +10,4 @@ import java.util.List;
 @Remote
 public interface BudgetStatelessEjbRemote extends BaseStatelessEjbRemote<Budget> {
     User getUserById(long id);
-    List<Category> getCategories();
 }

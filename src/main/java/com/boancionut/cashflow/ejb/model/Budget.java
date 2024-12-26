@@ -1,11 +1,14 @@
 package com.boancionut.cashflow.ejb.model;
 
 import jakarta.persistence.*;
+import jdk.jfr.Name;
+
 import java.io.Serializable;
 import java.util.List;
 
 @Entity
 @Table(name = "budgets")
+@NamedQuery(name = "Budget.findAll", query = "SELECT b FROM Budget b")
 public class Budget implements Serializable {
 
     @Id
@@ -13,31 +16,25 @@ public class Budget implements Serializable {
     private long id;
 
     @Column(nullable = false)
-    private double amount;
+    private String name;
 
     @Column(nullable = false)
-    private String name;
+    private double totalAmount;
+
+    @OneToMany(mappedBy = "budget", cascade = CascadeType.ALL)
+    private List<Transaction> transactions;
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    @ManyToMany
-    @JoinTable(
-            name = "budget_categories",
-            joinColumns = @JoinColumn(name = "budget_id"),
-            inverseJoinColumns = @JoinColumn(name = "category_id")
-    )
-    private List<Category> categories;
-
     public Budget() {
     }
 
-    public Budget(String name, double amount, User user, List<Category> categories) {
+    public Budget(String name, double totalAmount, User user) {
         this.name = name;
-        this.amount = amount;
+        this.totalAmount = totalAmount;
         this.user = user;
-        this.categories = categories;
     }
 
     public long getId() {
@@ -56,12 +53,20 @@ public class Budget implements Serializable {
         this.name = name;
     }
 
-    public double getAmount() {
-        return amount;
+    public double getTotalAmount() {
+        return totalAmount;
     }
 
-    public void setAmount(double amount) {
-        this.amount = amount;
+    public void setTotalAmount(double totalAmount) {
+        this.totalAmount = totalAmount;
+    }
+
+    public List<Transaction> getTransactions() {
+        return transactions;
+    }
+
+    public void setTransactions(List<Transaction> transactions) {
+        this.transactions = transactions;
     }
 
     public User getUser() {
@@ -70,13 +75,5 @@ public class Budget implements Serializable {
 
     public void setUser(User user) {
         this.user = user;
-    }
-
-    public List<Category> getCategories() {
-        return categories;
-    }
-
-    public void setCategories(List<Category> categories) {
-        this.categories = categories;
     }
 }

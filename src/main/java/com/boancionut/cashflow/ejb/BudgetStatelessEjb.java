@@ -20,10 +20,4 @@ public class BudgetStatelessEjb extends BaseStatelessEjb<Budget> implements Budg
     public User getUserById(long id) {
         return super.entityManager.find(User.class, id);
     }
-
-    @Override
-    public List<Category> getCategories() {
-        return super.entityManager.createQuery("SELECT c FROM Category c", Category.class).getResultList();
-    }
-
 }

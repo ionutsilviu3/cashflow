@@ -6,6 +6,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "categories")
+@NamedQuery(name = "Category.findAll", query = "SELECT c FROM Category c")
 public class Category implements Serializable {
 
     @Id
@@ -15,8 +16,13 @@ public class Category implements Serializable {
     @Column(nullable = false, unique = true)
     private String name;
 
-    @ManyToMany(mappedBy = "categories")
-    private List<Budget> budgets;
+    @ManyToMany
+    @JoinTable(
+            name = "category_transaction",
+            joinColumns = @JoinColumn(name = "category_id"),
+            inverseJoinColumns = @JoinColumn(name = "transaction_id")
+    )
+    private List<Transaction> transactions;
 
     public Category() {
     }
@@ -41,11 +47,11 @@ public class Category implements Serializable {
         this.name = name;
     }
 
-    public List<Budget> getBudgets() {
-        return budgets;
+    public List<Transaction> getTransactions() {
+        return transactions;
     }
 
-    public void setBudgets(List<Budget> budgets) {
-        this.budgets = budgets;
+    public void setTransactions(List<Transaction> transactions) {
+        this.transactions = transactions;
     }
 }

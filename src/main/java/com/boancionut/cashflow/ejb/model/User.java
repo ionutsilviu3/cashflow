@@ -27,9 +27,6 @@ public class User implements Serializable {
 //    private Timestamp createdAt;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Transaction> transactions;
-
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Budget> budgets;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
@@ -84,14 +81,6 @@ public class User implements Serializable {
 //    public void setCreatedAt(Timestamp createdAt) {
 //        this.createdAt = createdAt;
 //    }
-
-    public List<Transaction> getTransactions() {
-        return transactions;
-    }
-
-    public void setTransactions(List<Transaction> transactions) {
-        this.transactions = transactions;
-    }
 
     public List<Budget> getBudgets() {
         return budgets;

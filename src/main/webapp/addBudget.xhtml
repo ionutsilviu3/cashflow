@@ -6,27 +6,23 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <f:view>
-    <h:form>
-        <h:panelGrid columns="2">
-            <h:outputLabel for="name" value="Budget Name:" />
-            <h:inputText id="name" value="#{budgetBean.name}" required="true" />
+    <h:head>
+        <title>Add Budget</title>
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+    </h:head>
+    <h:body>
+        <h:form>
+            <h2>Add New Budget</h2>
+            <h:panelGrid columns="2">
+                <h:outputLabel for="name" value="Budget Name:" />
+                <h:inputText id="name" value="#{budgetBean.name}" required="true" />
 
-            <h:outputLabel for="amount" value="Budget Amount:" />
-            <h:inputText id="amount" value="#{budgetBean.amount}" required="true" />
+                <h:outputLabel for="amount" value="Amount:" />
+                <h:inputText id="amount" value="#{budgetBean.totalAmount}" required="true" />
 
-            <h:outputLabel value="Categories:" />
-            <h:panelGroup>
-                <ui:repeat value="#{budgetBean.categories}" var="category">
-                    <h:selectBooleanCheckbox value="#{budgetBean.selectedCategories.contains(category)}">
-                        <f:ajax event="change" render="@this" />
-                    </h:selectBooleanCheckbox>
-                    <h:outputLabel value="#{category.name}" />
-                    <br />
-                </ui:repeat>
-            </h:panelGroup>
-        </h:panelGrid>
-        <h:commandButton value="Add Budget" action="#{budgetBean.addBudget}" />
-        <h:commandButton value="Cancel" action="index?faces-redirect=true" />
-    </h:form>
+            </h:panelGrid>
+            <h:commandButton value="Add Budget" action="#{budgetBean.addBudget}" />
+        </h:form>
+    </h:body>
 </f:view>
 </html>

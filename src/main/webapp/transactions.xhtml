@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <title>Transactions</title>
+    <style>
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .pagination a {
+            margin: 0 5px;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #007bff;
+        }
+        .pagination a:hover {
+            background-color: #ddd;
+        }
+    </style>
+</h:head>
+<h:body>
+    <div class="container">
+        <h2>Transactions</h2>
+        <h:form>
+            <h:dataTable value="#{transactionBean.transactions}" var="transaction" rows="10" paginator="true" paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}">
+                <h:column>
+                    <f:facet name="header">Title</f:facet>
+                    #{transaction.title}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Amount</f:facet>
+                    #{transaction.amount}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Category</f:facet>
+                    #{transaction.category}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Type</f:facet>
+                    #{transaction.type}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">Date</f:facet>
+                    #{transaction.date}
+                </h:column>
+            </h:dataTable>
+        </h:form>
+        <div class="pagination">
+            <h:commandLink value="Previous" action="#{transactionBean.previousPage}" rendered="#{transactionBean.hasPreviousPage}" />
+            <h:commandLink value="Next" action="#{transactionBean.nextPage}" rendered="#{transactionBean.hasNextPage}" />
+        </div>
+    </div>
+</h:body>
+</html>

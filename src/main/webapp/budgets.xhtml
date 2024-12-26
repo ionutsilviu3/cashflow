@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:view>
+    <h:head>
+        <title>Budgets</title>
+        <link rel="stylesheet" type="text/css" href="styles.css" />
+    </h:head>
+    <h:body>
+        <div class="container">
+            <h2>Your Budgets</h2>
+            <h:form>
+                <h:dataTable value="#{budgetBean.budgets}" var="budget" rows="10" paginator="true" paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}">
+                    <h:column>
+                        <f:facet name="header">Name</f:facet>
+                        #{budget.name}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Amount</f:facet>
+                        #{budget.amount}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Category</f:facet>
+                        #{budget.category}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">Actions</f:facet>
+                        <h:commandButton value="Delete" action="#{budgetBean.deleteBudget(budget)}" />
+                    </h:column>
+                </h:dataTable>
+            </h:form>
+            <div class="pagination">
+                <h:commandLink value="Previous" action="#{budgetBean.previousPage}" rendered="#{budgetBean.hasPreviousPage}" />
+                <h:commandLink value="Next" action="#{budgetBean.nextPage}" rendered="#{budgetBean.hasNextPage}" />
+            </div>
+        </div>
+    </h:body>
+</f:view>
+</html>
