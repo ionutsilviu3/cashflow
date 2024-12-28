@@ -9,28 +9,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a44aad11-9eaa-44e1-82a7-c6612b69d549" name="Changes" comment="chore: refactored for new pages">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/TransactionStatelessEjb.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejbClient/TransactionStatelessEjbRemote.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/standaloneClient/TransactionBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/addTransaction.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/budgets.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/contact.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/transactions.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
+    <list default="true" id="a44aad11-9eaa-44e1-82a7-c6612b69d549" name="Changes" comment="feat: working adding budgets and transactions">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/TransactionEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/standaloneClient/CategoryBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/editBudget.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/editTransaction.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/BudgetStatelessEjb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/BudgetStatelessEjb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/TransactionStatelessEjb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/TransactionStatelessEjb.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/model/Budget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/model/Budget.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/model/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/model/Notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/model/Notification.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/model/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/model/Transaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejbClient/BudgetStatelessEjbRemote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejbClient/BudgetStatelessEjbRemote.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejbClient/CategoryStatelessEjbRemote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejbClient/CategoryStatelessEjbRemote.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejbClient/TransactionStatelessEjbRemote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejbClient/TransactionStatelessEjbRemote.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/standaloneClient/BudgetBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/standaloneClient/BudgetBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/standaloneClient/TransactionBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/standaloneClient/TransactionBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/standaloneClient/UserBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/standaloneClient/UserBean.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/faces-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/faces-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/addBudget.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/addBudget.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/addTransaction.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/addTransaction.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/budgets.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/budgets.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/transactions.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/transactions.xhtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,8 +39,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="jsf" />
         <option value="Interface" />
+        <option value="jsf" />
         <option value="Class" />
       </list>
     </option>
@@ -216,7 +215,8 @@
       <workItem from="1734020483334" duration="6600000" />
       <workItem from="1734798102054" duration="248000" />
       <workItem from="1735052440497" duration="6876000" />
-      <workItem from="1735127299927" duration="17591000" />
+      <workItem from="1735127299927" duration="47353000" />
+      <workItem from="1735384642181" duration="5615000" />
     </task>
     <task id="LOCAL-00001" summary="chore: refactored for better structure">
       <option name="closed" value="true" />
@@ -234,7 +234,15 @@
       <option name="project" value="LOCAL" />
       <updated>1734798336630</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat: working adding budgets and transactions">
+      <option name="closed" value="true" />
+      <created>1735216621163</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1735216621164</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -266,6 +274,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="chore: refactored for better structure" />
     <MESSAGE value="chore: refactored for new pages" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: refactored for new pages" />
+    <MESSAGE value="feat: working adding budgets and transactions" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: working adding budgets and transactions" />
   </component>
 </project>

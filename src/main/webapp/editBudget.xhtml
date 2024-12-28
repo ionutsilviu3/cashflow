@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+   <title>Edit Budget</title>
+   <link rel="stylesheet" type="text/css" href="styles.css" />
+</h:head>
+<h:body>
+   <div class="container">
+      <h2>Edit Budget</h2>
+      <h:form>
+         <h:panelGrid columns="2">
+            <h:outputLabel for="name" value="Name:" />
+            <h:inputText id="name" value="#{budgetBean.currentBudget.name}" required="true" />
+
+            <h:outputLabel for="totalAmount" value="Total Amount:" />
+            <h:inputText id="totalAmount" value="#{budgetBean.currentBudget.totalAmount}" required="true" />
+
+            <h:commandButton value="Save" action="#{budgetBean.saveEditedBudget}" />
+            <h:commandButton value="Cancel" action="#{budgetBean.cancelEdit}" immediate="true" />
+         </h:panelGrid>
+      </h:form>
+   </div>
+</h:body>
+</html>

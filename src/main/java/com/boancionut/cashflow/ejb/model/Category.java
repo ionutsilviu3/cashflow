@@ -2,6 +2,7 @@ package com.boancionut.cashflow.ejb.model;
 
 import jakarta.persistence.*;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -24,11 +25,17 @@ public class Category implements Serializable {
     )
     private List<Transaction> transactions;
 
+    @Column(nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date createdAt;
+
     public Category() {
+        this.createdAt = new Date();
     }
 
     public Category(String name) {
         this.name = name;
+        this.createdAt = new Date();
     }
 
     public long getId() {
@@ -53,5 +60,13 @@ public class Category implements Serializable {
 
     public void setTransactions(List<Transaction> transactions) {
         this.transactions = transactions;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
     }
 }

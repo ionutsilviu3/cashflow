@@ -2,7 +2,7 @@ package com.boancionut.cashflow.ejb.model;
 
 import jakarta.persistence.*;
 import java.io.Serializable;
-import java.util.List;
+import java.util.Date;
 
 @Entity
 @Table(name = "transactions")
@@ -19,6 +19,10 @@ public class Transaction implements Serializable {
     @Column(nullable = false)
     private double amount;
 
+    @Column(nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date timestamp;
+
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
@@ -28,11 +32,13 @@ public class Transaction implements Serializable {
     private Budget budget;
 
     public Transaction() {
+        this.timestamp = new Date();
     }
 
     public Transaction(String description, double amount) {
         this.description = description;
         this.amount = amount;
+        this.timestamp = new Date();
     }
 
     public long getId() {
@@ -57,6 +63,14 @@ public class Transaction implements Serializable {
 
     public void setAmount(double amount) {
         this.amount = amount;
+    }
+
+    public Date getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Date timestamp) {
+        this.timestamp = timestamp;
     }
 
     public Category getCategory() {

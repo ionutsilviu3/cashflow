@@ -3,12 +3,24 @@
               xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
               http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_3.xsd"
               version="2.3">
-    <converter>
-        <converter-for-class>com.boancionut.cashflow.ejb.model.Category</converter-for-class>
-        <converter-class>com.boancionut.cashflow.converter.CategoryConverter</converter-class>
-    </converter>
-    <converter>
-        <converter-for-class>com.boancionut.cashflow.ejb.model.Budget</converter-for-class>
-        <converter-class>com.boancionut.cashflow.converter.BudgetConverter</converter-class>
-    </converter>
+
+    <navigation-rule>
+        <from-view-id>/index.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>index</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>budgets</from-outcome>
+            <to-view-id>/budgets.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>transactions</from-outcome>
+            <to-view-id>/transactions.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>contact</from-outcome>
+            <to-view-id>/contact.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
 </faces-config>

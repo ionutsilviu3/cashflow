@@ -4,6 +4,7 @@ import com.boancionut.cashflow.ejb.model.User;
 import com.boancionut.cashflow.ejbClient.UserStatelessEjbRemote;
 import jakarta.annotation.PostConstruct;
 import jakarta.ejb.EJB;
+import jakarta.enterprise.context.SessionScoped;
 import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Named;
 
@@ -11,7 +12,7 @@ import java.io.Serializable;
 import java.util.List;
 
 @Named("userBean")
-@ViewScoped
+@SessionScoped
 public class UserBean implements Serializable {
 
     private String name;
@@ -25,6 +26,7 @@ public class UserBean implements Serializable {
     @PostConstruct
     public void init() {
         userList = userStatelessEjbRemote.getAll();
+        name = userList.get(0).getName();
     }
 
     public void addUser() {

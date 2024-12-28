@@ -37,4 +37,9 @@ public class TransactionStatelessEjb extends BaseStatelessEjb<Transaction> imple
         return super.entityManager.find(Category.class, id);
     }
 
+    @Override
+    public void updateBudget(Budget selectedBudget) {
+        super.entityManager.merge(selectedBudget);
+    }
+
 }

@@ -13,4 +13,6 @@ public interface TransactionStatelessEjbRemote extends BaseStatelessEjbRemote<Tr
     List<Budget> getBudgets();
     Budget findBudgetById(long id);
     Category findCategoryById(long id);
+
+    void updateBudget(Budget selectedBudget);
 }

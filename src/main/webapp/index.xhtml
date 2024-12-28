@@ -13,30 +13,30 @@
     <div class="navbar">
         <h1>Cash Flow</h1>
         <div class="nav-links">
-            <a href="#home">Home</a>
-            <a href="#budgets">Budgets</a>
-            <a href="#transactions">Transactions</a>
-            <a href="#contact">Contact</a>
+            <h:link value="Home" outcome="/index.xhtml" />
+            <h:link value="Budgets" outcome="/budgets.xhtml" />
+            <h:link value="Transactions" outcome="/transactions.xhtml" />
+            <h:link value="Contact" outcome="/contact.xhtml" />
         </div>
     </div>
     <div class="container">
 
         <h:panelGroup>
-            <h2 class="greeting">Hello, John!</h2>
+            <h2 class="greeting">Hello, #{userBean.name}!</h2>
         </h:panelGroup>
 
         <div class="summary-container">
             <div class="summary-card">
                 <h3>Total Balance 💰</h3>
-                <p>$1000</p>
+                <p>#{budgetBean.totalBudgets}</p>
             </div>
             <div class="summary-card">
                 <h3>Earned This Month 💵</h3>
-                <p>$500</p>
+                <p>#{transactionBean.totalPositiveTransactions}</p>
             </div>
             <div class="summary-card">
                 <h3>Spent This Month 💸</h3>
-                <p>$300</p>
+                <p>#{transactionBean.totalNegativeTransactions}</p>
             </div>
         </div>
 
@@ -48,7 +48,7 @@
                         <h:commandLink value="+ Add Budget" action="addBudget" class="add-button" />
                     </h:form>
                     <h:form>
-                        <h:commandLink value="View All" action="viewAllBudgets" class="view-all-button" />
+                        <h:commandLink value="View All" action="budgets" class="view-all-button" />
                     </h:form>
                 </div>
             </div>
@@ -57,6 +57,7 @@
                     <h3>#{budget.name}</h3>
                     <p>#{budget.totalAmount}</p>
                     <h:form>
+                        <h:commandButton value="Edit" action="#{budgetBean.navigateToEditPage(budget.id)}" />
                         <h:commandButton value="Delete" action="#{budgetBean.deleteBudget(budget.id)}" />
                     </h:form>
                 </div>
@@ -71,17 +72,42 @@
                         <h:commandLink value="+ Add Transaction" action="addTransaction" class="add-button" />
                     </h:form>
                     <h:form>
-                        <h:commandLink value="View All" action="viewAllTransactions" class="view-all-button" />
+                        <h:commandLink value="View All" action="transactions" class="view-all-button" />
                     </h:form>
                 </div>
             </div>
-            <ui:repeat value="#{transactionBean.transactions}" var="transaction">
+            <ui:repeat value="#{transactionBean.lastFiveTransactions}" var="transaction">
                 <div class="transaction-card #{transaction.amount > 0 ? 'positive' : 'negative'}">
                     <h3>#{transaction.description}</h3>
                     <p>#{transaction.amount}</p>
                     <p>#{transaction.category.name}</p>
                     <h:form>
+                        <h:commandButton value="Edit" action="#{transactionBean.navigateToEditPage(transaction.id)}" />
                         <h:commandButton value="Delete" action="#{transactionBean.deleteTransaction(transaction.id)}" />
+                    </h:form>
+                </div>
+            </ui:repeat>
+        </div>
+
+        <div class="section-container">
+            <div class="header-container">
+                <h2>Your Categories</h2>
+                <div>
+                    <h:form>
+                        <h:inputText value="#{categoryBean.name}" placeholder="New Category Name" />
+                        <h:commandButton value="Add Category" action="#{categoryBean.addCategory}" />
+                    </h:form>
+                    <h:form>
+                        <h:commandLink value="View All" action="viewAllCategories" class="view-all-button" />
+                    </h:form>
+                </div>
+            </div>
+            <ui:repeat value="#{categoryBean.categories}" var="category">
+                <div class="category-card">
+                    <h3>#{category.name}</h3>
+                    <h:form>
+                        <h:commandButton value="Edit" action="#{categoryBean.navigateToEdit(category.id)}" />
+                        <h:commandButton value="Delete" action="#{categoryBean.deleteCategory(category.id)}" />
                     </h:form>
                 </div>
             </ui:repeat>

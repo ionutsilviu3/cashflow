@@ -7,7 +7,7 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:head>
     <title>Transactions</title>
-    <style>
+    <style type="text/css">
         .container {
             width: 80%;
             margin: 0 auto;
@@ -48,35 +48,54 @@
         .pagination a:hover {
             background-color: #ddd;
         }
+        .transaction-card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 10px 0;
+            background-color: rgba(173, 216, 230, 0.5);
+            color: #000;
+            width: calc(100% - 30px);
+            align-self: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .transaction-card h3 {
+            margin: 0 0 10px 0;
+        }
     </style>
 </h:head>
 <h:body>
     <div class="container">
         <h2>Transactions</h2>
         <h:form>
-            <h:dataTable value="#{transactionBean.transactions}" var="transaction" rows="10" paginator="true" paginatorTemplate="{FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink}">
-                <h:column>
-                    <f:facet name="header">Title</f:facet>
-                    #{transaction.title}
-                </h:column>
-                <h:column>
-                    <f:facet name="header">Amount</f:facet>
-                    #{transaction.amount}
-                </h:column>
-                <h:column>
-                    <f:facet name="header">Category</f:facet>
-                    #{transaction.category}
-                </h:column>
-                <h:column>
-                    <f:facet name="header">Type</f:facet>
-                    #{transaction.type}
-                </h:column>
-                <h:column>
-                    <f:facet name="header">Date</f:facet>
-                    #{transaction.date}
-                </h:column>
-            </h:dataTable>
+            <h:panelGrid columns="2">
+                <h:outputLabel for="description" value="Description:" />
+                <h:inputText id="description" value="#{transactionBean.description}" />
+
+                <h:outputLabel for="amount" value="Amount:" />
+                <h:inputText id="amount" value="#{transactionBean.amount}" />
+
+                <h:outputLabel for="category" value="Category:" />
+                <h:selectOneMenu id="category" value="#{transactionBean.categoryId}">
+                    <f:selectItems value="#{transactionBean.categories}" var="category" itemValue="#{category.id}" itemLabel="#{category.name}" />
+                </h:selectOneMenu>
+
+                <h:commandButton value="Add Transaction" action="#{transactionBean.saveTransaction}" />
+            </h:panelGrid>
         </h:form>
+
+        <h:form>
+            <ui:repeat value="#{transactionBean.paginatedTransactions}" var="transaction">
+                <div class="transaction-card">
+                    <h3>#{transaction.description}</h3>
+                    <p>Amount: #{transaction.amount}</p>
+                    <p>Category: #{transaction.category.name}</p>
+                    <h:commandButton value="Edit" action="#{transactionBean.navigateToEditPage(transaction.id)}" />
+                    <h:commandButton value="Delete" action="#{transactionBean.deleteTransaction(transaction.id)}" />
+                </div>
+            </ui:repeat>
+        </h:form>
+
         <div class="pagination">
             <h:commandLink value="Previous" action="#{transactionBean.previousPage}" rendered="#{transactionBean.hasPreviousPage}" />
             <h:commandLink value="Next" action="#{transactionBean.nextPage}" rendered="#{transactionBean.hasNextPage}" />

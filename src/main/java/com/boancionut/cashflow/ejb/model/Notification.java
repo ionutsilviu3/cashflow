@@ -2,7 +2,7 @@ package com.boancionut.cashflow.ejb.model;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
 @Table(name = "notifications")
@@ -19,15 +19,18 @@ public class Notification implements Serializable {
     @Column(nullable = false)
     private String message;
 
-//    @Column(nullable = false)
-//    private LocalDateTime sentAt;
+    @Column(nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date sentAt;
 
     public Notification() {
+        this.sentAt = new Date();
     }
 
     public Notification(User user, String message) {
         this.user = user;
         this.message = message;
+        this.sentAt = new Date();
     }
 
     public long getId() {
@@ -52,5 +55,13 @@ public class Notification implements Serializable {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public Date getSentAt() {
+        return sentAt;
+    }
+
+    public void setSentAt(Date sentAt) {
+        this.sentAt = sentAt;
     }
 }
