@@ -5,21 +5,16 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-<h:head>
-    <title>Home Page</title>
-    <link rel="stylesheet" type="text/css" href="styles.css" />
-</h:head>
-<h:body>
-    <div class="navbar">
-        <h1>Cash Flow</h1>
-        <div class="nav-links">
-            <h:link value="Home" outcome="/index.xhtml" />
-            <h:link value="Budgets" outcome="/budgets.xhtml" />
-            <h:link value="Transactions" outcome="/transactions.xhtml" />
-            <h:link value="Contact" outcome="/contact.xhtml" />
-        </div>
-    </div>
-    <div class="container">
+<ui:composition template="/template.xhtml">
+    <ui:define name="title">Home Page</ui:define>
+
+    <ui:define name="content">
+        <h:head>
+            <link rel="stylesheet" type="text/css" href="css/index.css" />
+            <link rel="stylesheet" type="text/css" href="css/transactions.css" />
+            <link rel="stylesheet" type="text/css" href="css/budgets.css" />
+            <link rel="stylesheet" type="text/css" href="css/categories.css" />
+        </h:head>
 
         <h:panelGroup>
             <h2 class="greeting">Hello, #{userBean.name}!</h2>
@@ -52,8 +47,8 @@
                     </h:form>
                 </div>
             </div>
-            <ui:repeat value="#{budgetBean.budgets}" var="budget">
-                <div class="budget-card">
+            <ui:repeat value="#{budgetBean.budgets}" var="budget" varStatus="status">
+                <div class="budget-card" style="background-color: #{budgetBean.getBudgetCardColor(status.index)};">
                     <h3>#{budget.name}</h3>
                     <p>#{budget.totalAmount}</p>
                     <h:form>
@@ -78,13 +73,19 @@
             </div>
             <ui:repeat value="#{transactionBean.lastFiveTransactions}" var="transaction">
                 <div class="transaction-card #{transaction.amount > 0 ? 'positive' : 'negative'}">
-                    <h3>#{transaction.description}</h3>
-                    <p>#{transaction.amount}</p>
-                    <p>#{transaction.category.name}</p>
-                    <h:form>
-                        <h:commandButton value="Edit" action="#{transactionBean.navigateToEditPage(transaction.id)}" />
-                        <h:commandButton value="Delete" action="#{transactionBean.deleteTransaction(transaction.id)}" />
-                    </h:form>
+                    <div class="left-section">
+                        <h3 class="category">#{transaction.category.name}</h3>
+                        <p class="description" title="#{transaction.description}">#{transaction.description}</p>
+                        <span class="date">#{transaction.timestampFormatted}</span>
+                    </div>
+                    <div class="right-section">
+                        <span class="amount">#{transaction.amount}</span>
+                        <span class="budget"><strong>Budget:</strong> #{transaction.budget.name}</span>
+                        <div class="transaction-buttons">
+                            <h:commandButton value="Edit" action="#{transactionBean.navigateToEditPage(transaction.id)}" styleClass="commandButton" />
+                            <h:commandButton value="Delete" action="#{transactionBean.deleteTransaction(transaction.id)}" styleClass="deleteButton" />
+                        </div>
+                    </div>
                 </div>
             </ui:repeat>
         </div>
@@ -112,10 +113,6 @@
                 </div>
             </ui:repeat>
         </div>
-
-    </div>
-    <div class="footer">
-        <p>&copy; 2025 Cash Flow. All rights reserved.</p>
-    </div>
-</h:body>
+    </ui:define>
+</ui:composition>
 </html>

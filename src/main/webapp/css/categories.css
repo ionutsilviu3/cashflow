@@ -1,0 +1,27 @@
+/* Styles specific to the categories page */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+.category-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+.category-card h3 {
+    margin: 0 0 10px 0;
+}
+.category-card p {
+    margin: 0;
+}
+.add-button, .view-all-button {
+    margin-left: 10px;
+}

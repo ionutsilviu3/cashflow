@@ -1,90 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+        "http://www.w3.org/TR/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-<h:head>
-    <title>Add Transaction</title>
-    <style type="text/css">
-        .container2 {
-            width: 50%;
-            margin: 0 auto;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        .form-group input, .form-group select {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-        .form-actions {
-            display: flex;
-            justify-content: space-between;
-        }
-        .form-actions h\:commandButton {
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .form-actions h\:commandButton:hover {
-            background-color: #0056b3;
-        }
-    </style>
-</h:head>
-<h:body>
-    <div class="container2">
-        <h2>Add Transaction</h2>
-        <h:form>
-            <div class="form-group">
-                <label for="description">Description:</label>
-                <h:inputText id="description" value="#{transactionBean.description}" required="true" autocomplete="off" />
-                <h:message for="description" style="color: red;" />
-            </div>
-            <div class="form-group">
-                <label for="category">Category:</label>
-                <h:selectOneMenu id="category" value="#{transactionBean.categoryId}" required="true" autocomplete="off">
-                    <f:selectItem itemLabel="-- Select Category --" itemValue="" />
-                    <f:selectItems value="#{categoryBean.categories}" var="category"
-                                   itemValue="#{category.id}" itemLabel="#{category.name}" />
-                </h:selectOneMenu>
-                <h:message for="category" style="color: red;" />
-            </div>
-            <div class="form-group">
-                <label for="budget">Budget:</label>
-                <h:selectOneMenu id="budget" value="#{transactionBean.budgetId}" required="true" autocomplete="off">
-                    <f:selectItem itemLabel="-- Select Budget --" itemValue="" />
-                    <f:selectItems value="#{budgetBean.budgets}" var="budget"
-                                   itemValue="#{budget.id}" itemLabel="#{budget.name}" />
-                </h:selectOneMenu>
-                <h:message for="budget" style="color: red;" />
-            </div>
-            <div class="form-group">
-                <label for="amount">Amount:</label>
-                <h:inputText id="amount" value="#{transactionBean.amount}" required="true" autocomplete="off" />
-                <h:message for="amount" style="color: red;" />
-            </div>
-            <div class="form-actions">
-                <h:commandButton value="Submit" action="#{transactionBean.saveTransaction}" />
-                <h:commandButton value="Cancel" action="#{transactionBean.cancel}" />
-            </div>
-        </h:form>
-    </div>
-</h:body>
+<ui:composition template="/template.xhtml">
+    <ui:define name="title">Add Transaction</ui:define>
+
+    <ui:define name="content">
+        <h:head>
+            <link rel="stylesheet" type="text/css" href="css/transactions.css" />
+        </h:head>
+        <div class="container">
+            <h2>Add Transaction</h2>
+            <h:form>
+                <div class="form-group">
+                    <label for="amount">Amount:</label>
+                    <h:inputText id="amount" value="#{transactionBean.amount}" required="true" autocomplete="off" class="form-control" />
+                    <h:message for="amount" style="color: red;" />
+                </div>
+                <div class="form-group">
+                    <label for="category">Category:</label>
+                    <h:selectOneMenu id="category" value="#{transactionBean.categoryId}" required="true" autocomplete="off" class="form-control">
+                        <f:selectItem itemLabel="-- Select Category --" itemValue="" />
+                        <f:selectItems value="#{categoryBean.categories}" var="category"
+                                       itemValue="#{category.id}" itemLabel="#{category.name}" />
+                    </h:selectOneMenu>
+                    <h:message for="category" style="color: red;" />
+                </div>
+                <div class="form-group">
+                    <label for="budget">Budget:</label>
+                    <h:selectOneMenu id="budget" value="#{transactionBean.budgetId}" required="true" autocomplete="off" class="form-control">
+                        <f:selectItem itemLabel="-- Select Budget --" itemValue="" />
+                        <f:selectItems value="#{budgetBean.budgets}" var="budget"
+                                       itemValue="#{budget.id}" itemLabel="#{budget.name}" />
+                    </h:selectOneMenu>
+                    <h:message for="budget" style="color: red;" />
+                </div>
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <h:inputText id="description" value="#{transactionBean.description}" required="true" autocomplete="off" class="form-control" />
+                    <h:message for="description" style="color: red;" />
+                </div>
+                <div class="form-actions">
+                    <h:commandButton value="Cancel" action="#{transactionBean.cancel}" class="btn btn-secondary" />
+                    <h:commandButton value="Submit" action="#{transactionBean.saveTransaction}" class="btn btn-primary" />
+                </div>
+            </h:form>
+        </div>
+    </ui:define>
+</ui:composition>
 </html>

@@ -2,6 +2,7 @@ package com.boancionut.cashflow.ejb.model;
 
 import jakarta.persistence.*;
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Entity
@@ -87,5 +88,10 @@ public class Transaction implements Serializable {
 
     public void setBudget(Budget budget) {
         this.budget = budget;
+    }
+
+    public String getTimestampFormatted() {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy, HH:mm");
+        return sdf.format(timestamp);
     }
 }

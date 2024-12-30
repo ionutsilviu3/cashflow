@@ -1,0 +1,48 @@
+/* Styles specific to the budgets page */
+.section-container {
+    background-color: #fff;
+    padding: 20px;
+    margin: 40px 0;
+    border-radius: 8px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+    overflow: visible;
+    position: relative;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.section-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.budget-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px 0;
+    color: #000;
+    width: calc(100% - 30px);
+    align-self: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.budget-card h3 {
+    margin: 0 0 10px 0;
+}
+
+.add-button {
+    display: inline-block;
+    margin: 20px 0;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

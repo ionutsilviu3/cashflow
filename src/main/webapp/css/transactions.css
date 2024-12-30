@@ -1,0 +1,221 @@
+/* General container styling */
+.container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Header styling */
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 32px;
+    color: #333;
+}
+
+/* Add transaction button */
+.add-transaction-button {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.add-transaction-button .commandButton {
+    padding: 12px 25px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-transaction-button .commandButton:hover {
+    background-color: #218838;
+}
+
+/* Transaction card styling */
+.transaction-card {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.transaction-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.transaction-card.positive {
+    border-left: 6px solid #28a745;
+}
+
+.transaction-card.negative {
+    border-left: 6px solid #dc3545;
+}
+
+/* Left section styling */
+.left-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.left-section .category {
+    font-size: 18px;
+    color: #333;
+    margin: 0;
+}
+
+.left-section .description {
+    font-size: 14px;
+    color: #666;
+    margin: 5px 0;
+}
+
+.left-section .date {
+    font-size: 12px;
+    color: #888;
+}
+
+/* Right section styling */
+.right-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.right-section .amount {
+    font-size: 18px;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.right-section .budget {
+    font-size: 14px;
+    color: #888;
+    text-align: right;
+    margin-top: 6px;
+    margin-bottom: 24px;
+}
+
+/* Buttons section */
+.transaction-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.transaction-buttons .commandButton {
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.transaction-buttons .commandButton:hover {
+    background-color: #0056b3;
+}
+
+.transaction-buttons .deleteButton {
+    padding: 8px 15px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.transaction-buttons .deleteButton:hover {
+    background-color: #c82333;
+}
+
+/* Pagination styling */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 15px;
+}
+
+.pagination .commandLink {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.pagination .commandLink:hover {
+    background-color: #0056b3;
+}
+
+/* Form styling */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}

@@ -12,6 +12,7 @@ import jakarta.inject.Named;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Random;
 
 @Named("budgetBean")
 @SessionScoped
@@ -156,5 +157,13 @@ public class BudgetBean implements Serializable {
 
     public void onTransactionEvent(@Observes TransactionEvent event) {
         budgets = budgetStatelessEjbRemote.getAll();
+    }
+
+    public String getBudgetCardColor(int index) {
+        Random random = new Random(index);
+        int hue = random.nextInt(360); // Random hue between 0 and 360
+        int saturation = 50 + random.nextInt(51); // Saturation between 50% and 100%
+        int lightness = 50 + random.nextInt(21); // Lightness between 50% and 70%
+        return String.format("hsl(%d, %d%%, %d%%)", hue, saturation, lightness);
     }
 }

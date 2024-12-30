@@ -238,7 +238,10 @@ public class TransactionBean implements Serializable {
     public void setCurrentTransaction(Transaction currentTransaction) {
         this.currentTransaction = currentTransaction;
     }
-
+    public String navigateToAddPage() {
+        clearFields();
+        return "addTransaction?faces-redirect=true";
+    }
     public String navigateToEditPage(Long transactionId) {
         this.currentTransaction = transactionStatelessEjbRemote.findById(transactionId);
         return "editTransaction?faces-redirect=true";
