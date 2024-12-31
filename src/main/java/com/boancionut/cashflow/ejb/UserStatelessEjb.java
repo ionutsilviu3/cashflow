@@ -12,4 +12,12 @@ public class UserStatelessEjb extends BaseStatelessEjb<User> implements UserStat
     public UserStatelessEjb() {
         super(User.class);
     }
+
+    @Override
+    public boolean findByEmail(String email) {
+        return entityManager.createNamedQuery("User.findByEmail")
+                .setParameter("email", email)
+                .getResultList()
+                .size() > 0;
+    }
 }

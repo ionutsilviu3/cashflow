@@ -7,4 +7,5 @@ import jakarta.ejb.Remote;
 @Remote
 public interface UserStatelessEjbRemote extends BaseStatelessEjbRemote<User> {
 
+    boolean findByEmail(String email);
 }

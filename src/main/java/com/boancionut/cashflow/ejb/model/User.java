@@ -3,11 +3,13 @@ package com.boancionut.cashflow.ejb.model;
 import jakarta.persistence.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.Date;
 import java.util.List;
 
 @Entity
 @Table(name = "users")
 @NamedQuery(name = "User.findAll", query = "SELECT u FROM User u")
+@NamedQuery(name = "User.findByEmail", query = "SELECT u FROM User u WHERE u.email = :email")
 public class User implements Serializable {
 
     @Id
@@ -21,10 +23,8 @@ public class User implements Serializable {
     private String email;
 
     @Column(nullable = false)
-    private String password;
-
-//    @Column(nullable = false)
-//    private Timestamp createdAt;
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date createdAt;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Budget> budgets;
@@ -32,14 +32,15 @@ public class User implements Serializable {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<Notification> notifications;
 
-    public User() {
+    public User()
+    {
+        this.createdAt = new Date();
     }
 
-    public User(String name, String email, String password) {
+    public User(String name, String email) {
         this.name = name;
         this.email = email;
-        this.password = password;
-        //this.createdAt = new Timestamp(System.currentTimeMillis());
+        this.createdAt = new Date();
     }
 
     public long getId() {
@@ -66,22 +67,6 @@ public class User implements Serializable {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-//    public Timestamp getCreatedAt() {
-//        return createdAt;
-//    }
-//
-//    public void setCreatedAt(Timestamp createdAt) {
-//        this.createdAt = createdAt;
-//    }
-
     public List<Budget> getBudgets() {
         return budgets;
     }
@@ -96,5 +81,13 @@ public class User implements Serializable {
 
     public void setNotifications(List<Notification> notifications) {
         this.notifications = notifications;
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Date createdAt) {
+        this.createdAt = createdAt;
     }
 }

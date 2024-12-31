@@ -9,32 +9,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a44aad11-9eaa-44e1-82a7-c6612b69d549" name="Changes" comment="feat: pre template">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/AsyncEmailSender.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/EmailMDB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/EmailProducer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/standaloneClient/EmailBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/budgets.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/categories.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/contact.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/extra.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/transactions.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/images/team.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/template.xhtml" afterDir="false" />
+    <list default="true" id="a44aad11-9eaa-44e1-82a7-c6612b69d549" name="Changes" comment="feat: functional sso with google">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/standaloneClient/CallbackServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/standaloneClient/LoginBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/client_secret.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/callback.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/login.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/model/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/model/Transaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/standaloneClient/BudgetBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/standaloneClient/BudgetBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/standaloneClient/TransactionBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/standaloneClient/TransactionBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/addBudget.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/addBudget.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/addTransaction.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/addTransaction.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/budgets.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/budgets.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/contact.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/contact.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/editBudget.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/editBudget.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/editTransaction.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/editTransaction.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/UserStatelessEjb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/UserStatelessEjb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejb/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejbClient/UserStatelessEjbRemote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/ejbClient/UserStatelessEjbRemote.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/standaloneClient/UserBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/boancionut/cashflow/standaloneClient/UserBean.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/transactions.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/transactions.xhtml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,8 +33,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="jsf" />
         <option value="CSS File" />
+        <option value="jsf" />
         <option value="Class" />
       </list>
     </option>
@@ -80,6 +68,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -109,7 +100,7 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -124,8 +115,8 @@
       <recent name="C:\Users\ionut\IdeaProjects\CashFlow\src\main\java\com\boancionut\cashflow" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\ionut\IdeaProjects\CashFlow\src\main\webapp\styles" />
       <recent name="C:\Users\ionut\IdeaProjects\CashFlow\src\main\webapp" />
+      <recent name="C:\Users\ionut\IdeaProjects\CashFlow\src\main\webapp\styles" />
     </key>
   </component>
   <component name="RunManager">
@@ -225,7 +216,7 @@
       <workItem from="1734798102054" duration="248000" />
       <workItem from="1735052440497" duration="6876000" />
       <workItem from="1735127299927" duration="47353000" />
-      <workItem from="1735384642181" duration="30234000" />
+      <workItem from="1735384642181" duration="40522000" />
     </task>
     <task id="LOCAL-00001" summary="chore: refactored for better structure">
       <option name="closed" value="true" />
@@ -259,11 +250,38 @@
       <option name="project" value="LOCAL" />
       <updated>1735397841820</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat: added working mailing">
+      <option name="closed" value="true" />
+      <created>1735579175556</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1735579175556</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat: functional sso with google">
+      <option name="closed" value="true" />
+      <created>1735649990417</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1735649990418</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+        <option value="GitHub.CommitStatus" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -293,6 +311,8 @@
     <MESSAGE value="chore: refactored for new pages" />
     <MESSAGE value="feat: working adding budgets and transactions" />
     <MESSAGE value="feat: pre template" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: pre template" />
+    <MESSAGE value="feat: added working mailing" />
+    <MESSAGE value="feat: functional sso with google" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: functional sso with google" />
   </component>
 </project>
